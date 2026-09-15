@@ -1,0 +1,40 @@
+{
+  "compatibility_date": "2026-09-13",
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "wow-forever-wiki",
+  "account_id": "3f8f96e3145ebbab6b876c70e3db556c",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "DATABASE_PROVIDER": "d1",
+    "VITE_APP_URL": "https://wowforeverwiki.org",
+    "VITE_APP_NAME": "WoW Forever Wiki"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "wow-forever-wiki-db",
+      "database_id": "aec3a6c5-f8d6-4d3c-93fe-8afd23481b6f",
+      "migrations_dir": "drizzle"
+    }
+  ],
+  "main": "index.mjs",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "../public"
+  },
+  "no_bundle": true,
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": [
+        "**/*.mjs",
+        "**/*.js"
+      ]
+    }
+  ]
+}
